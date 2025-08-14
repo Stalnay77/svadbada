@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend+Giga:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend+Giga:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend+Giga:wght@100..900&family=Marck+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <title>приглашение на свадьбу</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+      max-width: 100vw;
+      overflow-x: hidden;
+      font-family: "Shantell Sans", cursive;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+      font-variation-settings:
+        "BNCE" 0,
+        "INFM" 0,
+        "SPAC" 0;
+    }
+
+    #box1 {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    #box1 img {
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      object-fit: cover;
+    }
+
+    #name,
+    #box1 h2 {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      color: #fafafa;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    #name {
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 0;
+    }
+
+    #box1 h2 {
+      top: 60%;
+    }
+
+    #box2,
+    #box3,
+    #box4,
+    #box5,
+    #box6,
+    #box7 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      padding: 20px 15px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      word-wrap: break-word;
+      padding: 0 10px;
+    }
+
+    #box2 img,
+    #box5 img,
+    #box6 img {
+      max-width: 100%;
+      width: 300px;
+      height: auto;
+      margin: 15px 0;
+    }
+
+    #box2 img {
+      box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+    }
+
+    #box3 img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      margin: 15px 0;
+    }
+
+    #map {
+      margin-top: 15px;
+      height: 50px;
+      width: 200px;
+      background-color: rgb(78, 78, 78);
+      color: #fafafa;
+      border: none;
+      font-size: 16px;
+    }
+
+    #map:active {
+      border-style: outset;
+    }
+
+    #box4 {
+      box-shadow: 0 -10px 10px -5px rgba(0, 0, 0, 0.3),
+        0 10px 10px -5px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      background-color: #fafafa;
+      margin: 20px 0;
+    }
+
+    #cobes {
+      display: flex;
+      flex-direction: row;
+      margin: 15px 0;
+    }
+
+    #cobes div {
+      border-radius: 2px;
+      height: 40px;
+      width: 40px;
+      margin: 0 5px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 400px;
+      height: 500px;
+      margin: 15px 0;
+    }
+
+    @media (max-width: 480px) {
+      #name {
+        font-size: 24px;
+      }
+
+      #box1 h2 {
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      h3,
+      h4 {
+        font-size: 16px;
+      }
+    }
+
+    .shr {
+
+      font-family: "Marck Script", cursive;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    #box2 {
+      opacity: 0;
+      /* Начальное значение непрозрачности */
+      transition: opacity 1.5s ease;
+      /* Настройка плавности и время перехода */
+    }
+
+    #box2.element-show {
+      opacity: 1;
+      transition: all 1.5s;
+      transform: translateY(0%);
+    }
+
+    #box3 {
+      opacity: 0;
+      /* Начальное значение непрозрачности */
+      transition: opacity 0.5s ease;
+      /* Настройка плавности и время перехода */
+    }
+
+    #box3.element-show {
+      opacity: 1;
+      transition: all 1.5s;
+      transform: translateY(0%);
+    }
+
+    #box4 {
+      opacity: 0;
+      /* Начальное значение непрозрачности */
+      transition: opacity 0.5s ease;
+      /* Настройка плавности и время перехода */
+    }
+
+    #box4.element-show {
+      opacity: 1;
+      transition: all 1.5s;
+      transform: translateY(0%);
+    }
+
+    #box5 {
+      opacity: 0;
+      /* Начальное значение непрозрачности */
+      transition: opacity 0.5s ease;
+      /* Настройка плавности и время перехода */
+    }
+
+    #box5.element-show {
+      opacity: 1;
+      transition: all 1.5s;
+      transform: translateY(0%);
+    }
+
+    #box6 {
+      opacity: 0;
+      /* Начальное значение непрозрачности */
+      transition: opacity 0.5s ease;
+      /* Настройка плавности и время перехода */
+    }
+
+    #box6.element-show {
+      opacity: 1;
+      transition: all 1.5s;
+      transform: translateY(0%);
+    }
+
+    #box7 {
+      opacity: 0;
+      /* Начальное значение непрозрачности */
+      transition: opacity 0.5s ease;
+      /* Настройка плавности и время перехода */
+    }
+
+    #box7.element-show {
+      opacity: 1;
+      transition: all 1.5s;
+      transform: translateY(0%);
+    }
+
+    #map:hover {
+      cursor: pointer;
+      border: #7e7e7e solid 2px;
+      background-color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Ваш HTML остаётся таким же, только уберите inline стили для h1 и h2 в #box1 -->
+  <div id="box1">
+    <img src="https://static.tildacdn.com/tild6338-3038-4765-b337-333534393338/Screenshot_25-fotor-.jpg" alt="">
+    <h1 id="name" class="shr">Алина и Денис</h1>
+    <h2>17 июля 2026</h2>
+  </div>
+  <div id="box2">
+    <h1 style="margin-bottom: 1vh;">Дорогие гости!</h1>
+    <h4 style="max-width: 65%; margin-bottom: 0;">Один день в этом году станет для нас особенно важным, и мы хотим
+      провести его в кругу
+      близких друзей!</h4>
+    <h4 style="max-width: 65%;">С большим удовольствием приглашаем вас на свадьбу, которая состоится:</h4>
+    <img src="https://static.tildacdn.com/tild6164-6139-4961-b066-396361663666/photo_2025-08-12_17-.jpg" alt="">
+  </div>
+  <div id="box3">
+    <h1>Локация</h1>
+    <h3 style="max-width: 90%;">Ярославский муниципальный округ, Карабихское сельское поселение (Свадебный парк Клевер
+      - комплекс Изгиб)</h3>
+    <img src="https://static.tildacdn.com/tild3762-6664-4131-b665-653963636465/snapedit_17550702606.jpeg" alt="">
+    <button id="map" onclick="location='https://yandex.ru/maps/-/CHhhyWj~'"
+      style="border-radius: 5px; padding: 2%;">Перейти на
+      карту</button>
+  </div>
+  <div id="box4">
+    <h1>Тайминг</h1>
+    <h1 style="margin-top: 2vh;">17 июля 2026</h1>
+    <h2 style="margin-bottom: 0;  margin-top:2vh; color: #8d8d8d;">16:00 - Cбор гостей, фуршет</h2>
+    <h2 style="color :#8d8d8d; margin-top: 0;">Просим взять c собой хорошее настроение и свои улыбки</h2>
+    <h2 style="margin-bottom: 0; color: #8d8d8d; margin-top:2vh;">16:30 - Церемония</h2>
+    <h2 style="color :#8d8d8d; margin-top: 0;">Вы станете свидетелем трогательного момента</h2>
+    <h2 style="margin-bottom: 0; color: #8d8d8d; margin-top:2vh;">17:00- Банкет</h2>
+    <h2 style="color: #8d8d8d; color: #8d8d8d; ">Время вкусной еды и весёлых танцев</h2>
+    <h2 style="margin-bottom: 0; color: #8d8d8d; margin-top:2vh;   ">23:00 - Финал</h2>
+    <h2 style="color :#8d8d8d; margin-top: 0;">Завершение вечера</h2>
+  </div>
+  <div id="box5">
+    <h1>Дресс-код</h1>
+    <h2 style="max-width: 98%; margin-bottom: 0; margin-top:1vh; color: #7e7e7e; max-width: 90%;">Мы будем очень
+      благодарны, если вы
+      поддержите
+      цветовую палитру нашей
+      свадьбы</h2>
+    <div id="cobes" style="display: flex; flex-direction: row; margin-bottom: 1vh; margin-top: 1vh;">
+      <div id="cub1"
+        style="border-radius:50%; border: 2px solid silver; height: 5vh; width:5vh; background-color: #D1DDD1; ">
+      </div>
+      <div id="cub2"
+        style="border-radius:50%; border: 2px solid silver; height: 5vh; width:5vh; background-color: #B7C8B6; margin-left: 1vh; ">
+      </div>
+      <div id="cub3" style="border-radius:50%; border: 2px solid silver; height: 5vh; width:5vh; background-color:
+#879F87;margin-left: 1vh; ">
+      </div>
+      <div id="cub4"
+        style="border-radius:50%; border: 2px solid silver; height: 5vh; width:5vh; background-color: #6F866A; margin-left: 1vh;">
+      </div>
+      <div id="cub5"
+        style="border-radius:50%; border: 2px solid silver; height: 5vh; width:5vh; background-color: #304B3C; margin-left: 1vh;">
+      </div>
+    </div>
+    <div class="slider-container"
+      style="position: relative; width: 100%; max-width: 600px; margin: 0 auto; overflow: hidden; border-radius: 2%;">
+      <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease;">
+        <!-- Ваше текущее изображение -->
+        <div class="slide" style="min-width: 100%;">
+          <img src="https://static.tildacdn.com/tild3862-3961-4363-b362-393139383733/Screenshot_22.jpg"
+            style="width: 100%; display: block;">
+        </div>
+
+        <!-- Добавьте дополнительные изображения по аналогии -->
+        <div class="slide" style="min-width: 100%;">
+          <img src="https://static.tildacdn.com/tild6166-3436-4436-b332-386631393763/Screenshot_39.jpg"
+            style="width: 100%; display: block;">
+        </div>
+
+        <div class="slide" style="min-width: 100%;">
+          <img src="https://static.tildacdn.com/tild3539-6563-4634-a666-613334376531/Screenshot_40.jpg"
+            style="width: 100%; display: block;">
+        </div>
+      </div>
+
+      <!-- Кнопки навигации -->
+      <button class="slider-prev"
+        style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(255,255,255,0.5); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer;">❮</button>
+      <button class="slider-next"
+        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(255,255,255,0.5); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer;">❯</button>
+
+      <!-- Точки-индикаторы -->
+      <div class="slider-dots"
+        style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 10px;">
+        <span class="dot active"
+          style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
+        <span class="dot"
+          style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
+        <span class="dot"
+          style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
+      </div>
+    </div>
+  </div>
+  <div id="box6">
+    <h1>Детали</h1>
+    <h2 style="max-width: 95%; margin-bottom: 0; color: #7e7e7e;">Просим не дарить, пожалуйста, цветы, ведь из-за
+      скорого отъезда, мы не сможем насладится их красотой в полной мере. Лучшим комплиментом будет бутылочка любимого
+      напитка.</h2>
+    <img src="https://static.tildacdn.com/tild6239-3036-4533-a534-646136343365/Screenshot_23-Artgur.png"
+      style="margin-left: 5%;">
+    <h2 style="color: #7e7e7e;max-width: 95%;">В качестве подарка будем рады вкладу в бюджет нашей семьи - он поможет
+      воплотить нашу мечту в реальность!
+    </h2>
+    <h2 style="color: #7e7e7e;max-width: 95%; margin-top: 1vh;">Просим вас воздержаться от криков "Горько"! и сохранить
+      атмосферу
+      уютного праздника.
+    </h2>
+    <img src="" alt="">
+
+  </div>
+  <div id="box7">
+    <h1>Анкета гостя</h1>
+    <h2 style="max-width: 98%; margin-bottom: 0; margin-top:1vh;">Просим подтвердить Ваше присутствие до 10 июля 2026
+    </h2>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLScnrxM2J0L3E_0lJTnivwIuepOlfQxSig8jzvGDAxXyKLETrQ/viewform?embedded=true"
+      width="300" height="500" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+
+  </div>
+</body>
+<script>function onEntry(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+        change.target.classList.add('element-show');
+      }
+    });
+  }
+
+  let options = {
+    threshold: [0.5]
+  };
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll('#box2');
+
+  for (let elm of elements) {
+    observer.observe(elm);
+  }
+
+
+
+  let elements3 = document.querySelectorAll('#box3');
+  for (let elm of elements3) {
+    observer.observe(elm);
+  }
+  let elements4 = document.querySelectorAll('#box4');
+  for (let elm of elements4) {
+    observer.observe(elm);
+  }
+  let elements5 = document.querySelectorAll('#box5');
+  for (let elm of elements5) {
+    observer.observe(elm);
+  }
+  let elements6 = document.querySelectorAll('#box6');
+  for (let elm of elements6) {
+    observer.observe(elm);
+  }
+  let elements7 = document.querySelectorAll('#box7');
+  for (let elm of elements7) {
+    observer.observe(elm);
+  }
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    const dots = document.querySelectorAll('.dot');
+
+    let currentIndex = 0;
+    const slideCount = slides.length;
+
+    function updateSlider() {
+      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Обновление активной точки
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    // Переключение на следующий слайд
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateSlider();
+    });
+
+    // Переключение на предыдущий слайд
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      updateSlider();
+    });
+
+    // Переключение по точкам
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+      });
+    });
+
+    // Автопрокрутка (опционально)
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateSlider();
+    }, 15000);
+  });
+</script>
+
+
+</html>
